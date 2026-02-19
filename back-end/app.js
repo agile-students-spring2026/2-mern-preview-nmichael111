@@ -78,5 +78,26 @@ app.post('/messages/save', async (req, res) => {
   }
 })
 
+app.get('/about', (req, res) => {
+  try {
+    res.json({
+      name: 'Nick',
+      paragraphs: [
+        "My name is Nick and I'm a senior studying Computer Science at NYU's College of Arts and Science. I was born in New York and I've lived here my whole life.",
+        "I've recently given up on Windows and have been trying Linux distros and right now I'm running NixOS as my main desktop OS. It's been a pretty interesting experience setting everything up with Nix configurations.",
+        "Outside of that stuff, I like to play video games and watch movies. My favorite right now is probably Ultrakill. A movie I frequently go rewatch is Bullet Train. I have been meaning to see Incepton for a while now.",
+      ],
+      imageUrl: '/me.jpeg',
+      status: 'all good',
+    })
+  } catch (err) {
+    console.error(err)
+    res.status(400).json({
+      error: err,
+      status: 'failed to retrieve about us data',
+    })
+  }
+})
+
 // export the express app we created to make it available to other modules
 module.exports = app // CommonJS export style!

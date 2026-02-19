@@ -1,0 +1,21 @@
+.AboutUs-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.AboutUs-photo {
+  width: 250px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.AboutUs-paragraph {
+  text-align: left;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.AboutUs-error {
+  color: red;
+}
